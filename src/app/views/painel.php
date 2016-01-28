@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="x-ua-compatible" content="IE=edge, chrome=1" />
-        <title>Primeira Página</title>
+        <title>{title}</title>
         <meta name="description" content="" />
         <meta name="author" content="" />
         <meta name="viewport" content="width=device-width; initial-scale=1.0" />
@@ -17,13 +17,16 @@
         <link rel="stylesheet" href="<?php echo base_url('/assets/css'); ?>/main.css">
     </head>
     <body>
-        <-- HTML CODE -->
-
-        <-- END OF HTML CODE -->
+        <!-- HTML CODE -->
+        <div class="container">
+            {content}
+        </div>
+        {defaultFooter}
+        <!-- END OF HTML CODE -->
             <script src="<?php echo base_url('assets/js')?>/jquery.min.js"></script>
             <script src="<?php echo base_url('assets/js')?>/bootstrap.min.js"></script>
             <script src="<?php echo base_url('assets/js')?>/main.js"></script>
-        <-- INTERACTIONS OBJECTS -->
+        <!-- INTERACTIONS OBJECTS -->
         <div class="modal fade modal-alert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
             <div class="modal-dialog modal-sm">
                 <div class="modal-content">
@@ -33,7 +36,7 @@
                 </div>
             </div>
         </div>
-        <--  END OF INTERACTIONS OBJECTS -->
+        <!--  END OF INTERACTIONS OBJECTS -->
     </body>
 </html>
 

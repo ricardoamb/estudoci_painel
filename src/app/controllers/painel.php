@@ -8,8 +8,14 @@ class Painel extends CI_Controller {
     
 	public function index()
 	{
-		$this->load->view('painel');
+		$this->appStart();
 	}
+
+    private function appStart()
+    {
+        redirect('users/login');
+    }
+
 }
 
 /* End of file painel.php */
