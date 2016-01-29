@@ -4,11 +4,7 @@
     switch ($screen)
     {
         case 'login':
-            echo '
-                <div class="page-header">
-                    <h1>My Dashboard<small> Almost Everything</small></h1>
-                </div>
-            ';
+            $this->load->view('painel/templates/login');
             break;
         default:
             echo '<div class="jumbotron text-center"><h1>Ops... Erro 404!</h1><p>Página não encontrada!</p></div>';

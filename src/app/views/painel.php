@@ -12,9 +12,7 @@
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-        <link rel="stylesheet" href="<?php echo base_url('/assets/css'); ?>/bootstrap.min.css">
-        <link rel="stylesheet" href="<?php echo base_url('/assets/css'); ?>/font-awesome.min.css">
-        <link rel="stylesheet" href="<?php echo base_url('/assets/css'); ?>/main.css">
+        {headerIncludes}
     </head>
     <body>
         <!-- HTML CODE -->
@@ -22,10 +20,8 @@
             {content}
         </div>
         {defaultFooter}
-        <!-- END OF HTML CODE -->
-            <script src="<?php echo base_url('assets/js')?>/jquery.min.js"></script>
-            <script src="<?php echo base_url('assets/js')?>/bootstrap.min.js"></script>
-            <script src="<?php echo base_url('assets/js')?>/main.js"></script>
+<!-- END OF HTML CODE AND FOOTER INCLUDES -->
+{footerIncludes}
         <!-- INTERACTIONS OBJECTS -->
         <div class="modal fade modal-alert" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
             <div class="modal-dialog modal-sm">
@@ -37,6 +33,7 @@
             </div>
         </div>
         <!--  END OF INTERACTIONS OBJECTS -->
+
     </body>
 </html>
 

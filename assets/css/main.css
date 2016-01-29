@@ -1,0 +1,10 @@
+.login-error{
+    color: red;
+    text-align: right;
+    font: 9px verdana;
+    margin-bottom: 5px;
+}
+.login-error i{
+    margin-left:5px;
+    margin-right:5px;
+}
