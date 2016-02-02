@@ -29,9 +29,9 @@ class Users extends CI_Controller {
         }
         setTheme('title','Login');
         setTheme('content', loadModule('user','login'));
+        setTheme('bodyClass','login');
         loadTemplate();
     }
-
 }
 
 /* End of file users.php */

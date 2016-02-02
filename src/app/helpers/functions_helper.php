@@ -37,6 +37,13 @@ function getTheme()
     return $ci->system->theme;
 }
 
+function getThemeByName($name)
+{
+    $ci =& get_instance();
+    $ci->load->library('system');
+    return $ci->system->theme[$name];
+}
+
 // Inicializa o painel adm, carregando os recursos necessários
 function initAdmin()
 {
@@ -49,7 +56,7 @@ function initAdmin()
     $year = date('Y');
     setTheme('defaultFooter',"");
     setTheme('template','painel');
-
+    setTheme('templateFolder','templates');
     setTheme('headerIncludes',loadStyle(array('bootstrap.min','font-awesome.min','template-login','main')), false);
     setTheme('footerIncludes',loadJavascript('https://code.jquery.com/jquery-1.12.0.min.js','',true), false);
     setTheme('footerIncludes',loadJavascript(array('bootstrap.min','main')), false);

@@ -4,7 +4,7 @@
     switch ($screen)
     {
         case 'login':
-            $this->load->view('painel/templates/login');
+            $this->parser->parse('painel/templates/login', getTheme());
             break;
         default:
             echo '<div class="jumbotron text-center"><h1>Ops... Erro 404!</h1><p>Página não encontrada!</p></div>';

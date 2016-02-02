@@ -14,7 +14,7 @@
 
         {headerIncludes}
     </head>
-    <body>
+    <body class="{bodyClass}">
         <!-- HTML CODE -->
         <div class="container">
             {content}
@@ -33,14 +33,5 @@
             </div>
         </div>
         <!--  END OF INTERACTIONS OBJECTS -->
-
     </body>
 </html>
-
-<?php
-/* End of file painel.php */
-/* Location ./src/app/views/painel.php */
-?>
-
-
-
