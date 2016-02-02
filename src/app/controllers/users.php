@@ -22,7 +22,16 @@ class Users extends CI_Controller {
             $email = $this->input->post('email', true);
             $senha = md5($this->input->post('senha', true));
             if($this->users_model->login($email, $senha)){
-                echo '<p class="text-center">Logado com Sucesso!</p>';
+                $query = $this->users_model->getUser($email)->row();
+                $userData = array(
+                    'id'        => $query->id,
+                    'nome'      => $query->nome,
+                    'email'     => $email,
+                    'admin'     => $query->admin,
+                    'logged'    => true
+                );
+                $this->session->set_userdata($userData);
+                redirect('painel');
             }else{
                 echo '<p class="text-center">Falha de Login</p>';
             }

@@ -4,6 +4,7 @@ class Painel extends CI_Controller {
     public function __construct()
     {
         parent::__construct();
+        initAdmin();
     }
     
 	public function index()
@@ -13,7 +14,14 @@ class Painel extends CI_Controller {
 
     private function appStart()
     {
-        redirect('users/login');
+        if(isLogged(false))
+        {
+            setTheme('title','Dashboard');
+            setTheme('content','<div class="conteiner"><h2>Escolha um menu para iniciar</h2></div>');
+            loadTemplate();
+        }else{
+            redirect('usuarios/login');
+        }
     }
 
 }

@@ -16,6 +16,17 @@ class Users_model extends CI_Model {
             return false;
         }
     }
+
+    public function getUser($email=null)
+    {
+        if($email != null)
+        {
+            return $this->db->get_where('usuarios',array('email'=>$email),1);
+        }else{
+            return false;
+        }
+
+    }
 }
 
 /* End of file users.php */

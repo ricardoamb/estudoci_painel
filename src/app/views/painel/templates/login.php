@@ -15,6 +15,6 @@
         <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
     </form><!-- /form -->
     <a href="#" class="forgot-password">
-        Esqueceu a senha?
+        Esqueci a minha senha
     </a>
 </div>

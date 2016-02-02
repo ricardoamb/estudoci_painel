@@ -57,7 +57,10 @@ function initAdmin()
     setTheme('defaultFooter',"");
     setTheme('template','painel');
     setTheme('templateFolder','templates');
-    setTheme('headerIncludes',loadStyle(array('bootstrap.min','font-awesome.min','template-login','main')), false);
+    setTheme('coreCSS', loadStyle(array('admin','elements')), false);
+    setTheme('pluginsCSS', loadStyle(array('plugins')), false);
+    setTheme('headerJS',loadJavascript(array('modernizr.min')), false);
+    setTheme('headerIncludes',loadStyle(array('ionicons.min','font-awesome.min')), false);
     setTheme('footerIncludes',loadJavascript('https://code.jquery.com/jquery-1.12.0.min.js','',true), false);
     setTheme('footerIncludes',loadJavascript(array('bootstrap.min','main')), false);
 }
@@ -131,6 +134,26 @@ function loadJavascript($file=null,$folder='assets/js',$remote=false)
         return $retorno;
     }else{
         return false;
+    }
+}
+
+// verifica se o usuarios esta logado no sistema
+function isLogged($redirect=true)
+{
+    $ci =& get_instance();
+    $ci->load->library('session');
+    $userStatus = $ci->session->userdata('logged');
+    if(!isset($userStatus) || $userStatus != true)
+    {
+        $ci->session->sess_destroy();
+        if($redirect)
+        {
+            redirect('users/login');
+        }else{
+            return false;
+        }
+    }else{
+        return true;
     }
 }
 
