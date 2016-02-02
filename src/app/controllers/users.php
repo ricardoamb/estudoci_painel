@@ -19,14 +19,12 @@ class Users extends CI_Controller {
         $this->form_validation->set_rules('senha','Senha','required');
         if($this->form_validation->run())
         {
-            echo '<p class="text-center">Validado com sucesso</p>';
             $email = $this->input->post('email', true);
             $senha = md5($this->input->post('senha', true));
-            echo '<p class="text-center">'.$email.' | '.$senha.'</p>';
             if($this->users_model->login($email, $senha)){
-                echo '<p class="text-center">Logado com sucesso</p>';
+                echo '<p class="text-center">Logado com Sucesso!</p>';
             }else{
-                echo '<p class="text-center">Falha no Login</p>';
+                echo '<p class="text-center">Falha de Login</p>';
             }
         }
         setTheme('title','Login');

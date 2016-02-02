@@ -6,11 +6,8 @@ class Users_model extends CI_Model {
     {
         if($email != null && $senha != null)
         {
-            $this->db->where('email', $email);
-            $this->db->where('senha', $senha);
-            $this->db->where('ativo', 1);
-            $query = $this->db->get('usuarios');
-            if($query->num_rows == 1){
+             $query = $query = $this->db->get_where('usuarios', array('email' => $email, 'senha' => $senha));
+             if($query->num_rows() == 1){
                 return true;
             }else{
                 return false;
