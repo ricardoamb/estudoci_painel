@@ -35,25 +35,6 @@ body.login{
     text-align: center;
 }
 
-.logoff-link{
-    background: white;
-    border-radius: 120px;
-    padding:6px 4px 5px 6px;
-    text-align: center;
-    color:darkred !important;
-    cursor: pointer;
-}
-
-.logoff-link:hover{
-    background: darkred;
-    color: white !important;
-}
-
-.logoff-link i{
-    padding:0 3px !important;
-}
-
-
 .nav-user .user{
     margin:0;
 }

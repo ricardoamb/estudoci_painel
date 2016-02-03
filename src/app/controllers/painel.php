@@ -17,6 +17,7 @@ class Painel extends CI_Controller {
         if(isLogged(false))
         {
             setTheme('title','Dashboard');
+            setTheme('bodyClass','fixed-footer');
             setTheme('content','<div class="conteiner"><h2>Escolha um menu para iniciar</h2></div>');
             loadTemplate();
         }else{

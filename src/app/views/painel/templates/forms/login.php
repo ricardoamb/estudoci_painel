@@ -1,5 +1,5 @@
 <!-- LOGIN FORM -->
-<form action="<?php base_url('users/login'); ?>" method="post" accept-charset="utf-8">
+<form action="<?php base_url('users/login'); ?>" method="post" accept-charset="utf-8" novalidate>
     <div id="pane-login" class="panel-body active"><!-- login.panel-body -->
 
         <h2>Entrar no Sistema</h2><!-- login title -->
@@ -23,9 +23,9 @@
         </div><!-- end senha form-group -->
 
         <div class="form-buttons clearfix"><!-- form-buttons -->
-            <div class="checkboxer checkboxer-indigo pull-right">
+            <div class="checkboxer pull-left" style="margin-left:35px;">
                 <input type="checkbox" id="checkboxRemember" value="remember">
-                <label for="checkboxRemember"></label>
+                <label for="checkboxRemember">Lembrar de mim</label>
             </div>
             <button type="submit" class="btn btn-success pull-right">Entrar</button>
         </div><!-- end form-buttons-->

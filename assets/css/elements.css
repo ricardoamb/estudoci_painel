@@ -4992,11 +4992,11 @@ label {
   left: -35px;
   width: 22px;
   height: 22px;
-  border: solid 2px;
-  border-color: rgba(0, 0, 0, 0.8);
+  border: solid 2px rgba(0, 0, 0, 0.8);
   -webkit-transition: all 280ms ease-out, -webkit-transform 140ms ease-out;
           transition: all 280ms ease-out, transform 140ms ease-out;
 }
+
 .checkboxer input[type="checkbox"] + label:after {
   content: " ";
   position: absolute;
@@ -5032,6 +5032,20 @@ label {
   border-color: #337ab7;
   border-width: 0px;
 }
+
+.checkboxer input[type="checkbox"] + label:before {
+    content: " ";
+    position: absolute;
+    display: inline-block;
+    top: 1px;
+    left: -35px;
+    width: 22px;
+    height: 22px;
+    border: solid 2px rgba(255, 255, 255, 0.8);
+    -webkit-transition: all 280ms ease-out, -webkit-transform 140ms ease-out;
+    transition: all 280ms ease-out, transform 140ms ease-out;
+}
+
 .checkboxer input[type="checkbox"]:checked + label:after {
   top: -5px;
   left: -28px;
