@@ -33,15 +33,29 @@ class Users extends CI_Controller {
                 $this->session->set_userdata($userData);
                 redirect('painel');
             }else{
-                echo '<p class="text-center">Falha de Login</p>';
+                echo '<span id="fail" data-fail="login"></span>';
             }
         }
         setTheme('title','Login');
         setTheme('content', loadModule('user','login'));
         setTheme('initPlugins', loadJavascript(array('scripts/user-pages')), false);
-        setTheme('bodyClass','login bg-login printable');
+        setTheme('bodyClass','login bg-blur bg-login printable');
         loadTemplate();
     }
+
+    public function logoff()
+    {
+        $this->session->unset_userdata(array(
+            'id'        => '',
+            'nome'      => '',
+            'email'     => '',
+            'admin'     => '',
+            'logged'    => false
+        ));
+        $this->session->sess_destroy();
+        redirect('users/login');
+    }
+
 }
 
 /* End of file users.php */

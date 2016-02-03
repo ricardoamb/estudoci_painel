@@ -16,5 +16,3 @@
         </div><!--.col-->
     </div><!--.row-->
 </div><!--.footer-links-->
-
-</div><!--.content-->

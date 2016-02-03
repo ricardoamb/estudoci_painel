@@ -20,7 +20,7 @@ class Painel extends CI_Controller {
             setTheme('content','<div class="conteiner"><h2>Escolha um menu para iniciar</h2></div>');
             loadTemplate();
         }else{
-            redirect('usuarios/login');
+            redirect('users/login');
         }
     }
 

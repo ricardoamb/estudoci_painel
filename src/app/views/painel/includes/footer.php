@@ -12,6 +12,9 @@
 <!-- END PLUGINS INITIALIZATION AND SETTINGS -->
 
 {footerIncludes}
+<div class="hover-panel"></div>
+<?php $this->load->view('painel/includes/scripts.php'); ?>
+
 
 </body>
 </html>

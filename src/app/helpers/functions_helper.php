@@ -59,7 +59,7 @@ function initAdmin()
     setTheme('template','painel');
     setTheme('templateFolder','templates');
     // Header Globals
-    setTheme('coreCSS', loadStyle(array('admin','elements')), false);
+    setTheme('coreCSS', loadStyle(array('admin','elements','main','perfect-scrollbar')), false);
     setTheme('pluginsCSS', loadStyle(array('plugins')), false);
     setTheme('headerJS',loadJavascript(array('modernizr.min')), false);
     setTheme('headerIncludes',loadStyle(array('ionicons.min','font-awesome.min')), false);
@@ -67,7 +67,7 @@ function initAdmin()
     setTheme('globalVendors',loadJavascript(array('global-vendors')),false);
     setTheme('pluginsArea','',false);
     setTheme('initPlugins','',false);
-    setTheme('footerIncludes',loadJavascript(array('pleasure','layout','bootstrap.min','main')), false);
+    setTheme('footerIncludes',loadJavascript(array('pleasure','layout','bootstrap.min','perfect-scrollbar.jquery','main')), false);
 }
 
 // Carrega um template passando o array como parametro
@@ -150,7 +150,6 @@ function isLogged($redirect=true)
     $userStatus = $ci->session->userdata('logged');
     if(!isset($userStatus) || $userStatus != true)
     {
-        $ci->session->sess_destroy();
         if($redirect)
         {
             redirect('users/login');
@@ -164,4 +163,3 @@ function isLogged($redirect=true)
 
 /* End of file functions_helper.php */
 /* Location ./src/app/helpers/functions_helper.php */
-

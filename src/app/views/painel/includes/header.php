@@ -29,3 +29,4 @@
         {headerJS}
     </head>
     <body class="{bodyClass}">
+    <span id="configs" data-url="<?php echo base_url(); ?>"></span>

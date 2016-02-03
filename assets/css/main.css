@@ -1,10 +1,59 @@
 .login-error{
     color: red;
-    text-align: right;
     font: 9px verdana;
-    margin-bottom: 5px;
+    margin:0;
+    padding:0;
 }
 .login-error i{
     margin-left:5px;
     margin-right:5px;
+}
+
+p    {color:white}
+
+body.login{
+    background: url("../img/large/lock.jpg") no-repeat fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.hover-panel{
+    width: 100%;
+    height: 100%;
+    background: url('../img/large/lock.jpg') fixed no-repeat;
+    background-size: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.forgot-message{
+    font: 12px Helvetica;
+    text-align: center;
+}
+
+.logoff-link{
+    background: white;
+    border-radius: 120px;
+    padding:6px 4px 5px 6px;
+    text-align: center;
+    color:darkred !important;
+    cursor: pointer;
+}
+
+.logoff-link:hover{
+    background: darkred;
+    color: white !important;
+}
+
+.logoff-link i{
+    padding:0 3px !important;
+}
+
+
+.nav-user .user{
+    margin:0;
 }

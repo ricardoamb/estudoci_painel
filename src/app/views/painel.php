@@ -1,13 +1,29 @@
 <?php
         defined('BASEPATH') OR exit('No direct script access allowed');
         include('painel/includes/header.php'); ECHO PHP_EOL;
+        if(isLogged(false)){
+            include_once('painel/includes/sidebar.php');
+        }
 ?>
 
         <!-- HTML CODE -->
 
-        <div class="container">
+        <div class="content">
+            <?php if(isLogged(false)) include_once('painel/includes/contentUpper.php'); ?>
             {content}
+            <?php if(isLogged(false)) include_once('painel/includes/contentDown.php'); ?>
         </div>
+        <?php if(isLogged(false)){ ?>
+            <div class="layer-container">
+
+                <?php include_once('painel/includes/menus/menu.php'); ?>
+
+                <?php include_once('painel/includes/search.php'); ?>
+
+                <?php include_once('painel/includes/profile.php'); ?>
+
+            </div>
+        <?php } ?>
 
         <!-- END OF HTML CODE -->
 

@@ -4329,7 +4329,9 @@ fieldset[disabled] .btn-flat.active {
   background: transparent;
 }
 .form-control:focus {
-  box-shadow: none;
+    box-shadow: none;
+    background: none;
+    color:#FFF;
 }
 .form-control.error {
   margin-bottom: 25px;
@@ -4501,7 +4503,7 @@ label {
   background: transparent;
 }
 .inputer .form-control:focus ~ .addon {
-  color: #337ab7;
+  color: none;
 }
 .inputer .form-control:focus ~ .underline:after {
   -webkit-transform: scale3d(1, 1, 1);
@@ -13754,7 +13756,7 @@ pre .hljs {
   margin: 0;
 }
 .bg-lock-screen .bg-blur:before {
-  background: url('../../globals/img/picjumbo/large/29.jpg') fixed no-repeat;
+  background: url('../img/large/lock.jpg') fixed no-repeat;
   background-size: cover;
 }
 .bg-lock-screen .lock-screen {
@@ -13796,49 +13798,46 @@ pre .hljs {
   padding: 0;
 }
 .bg-lock-screen .form-buttons button {
-  background: transparent;
-  font-size: 27px;
-  padding: 0;
-  margin-left: 10px;
-  color: rgba(255, 255, 255, 0.3);
+    background: transparent;
+    font-size: 27px;
+    padding: 0;
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.3);
 }
 .bg-lock-screen .form-buttons button:active,
 .bg-lock-screen .form-buttons button:hover {
-  color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.6);
 }
 .bg-lock-screen .form-control {
-  height: 40px;
-  border: 0;
-  color: #fff;
-}
-.bg-login {
-  margin: 0;
-}
-.bg-login .bg-blur:before {
-  background: url('../../globals/img/picjumbo/large/29.jpg') fixed no-repeat;
-  background-size: cover;
+    height: 40px;
+    border: 0;
+    color: #fff;
 }
 .bg-login .login-screen {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 400px;
-  height: 490px;
-  border-radius: 5px;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-  background: rgba(0, 0, 0, 0.4);
-  -webkit-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  z-index: 10;
-  -webkit-transition: height .3s, margin .3s;
-          transition: height .3s, margin .3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 425px;
+    margin-left: -85px;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.7);
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 10;
+    -webkit-transition: height .3s, margin .3s;
+            transition: height .3s, margin .3s;
+}
+.bg-login .login-screen.error{
+    height: 450px;
 }
 .bg-login .login-screen.forgot-password {
-  height: 300px;
+  height: 340px;
 }
 .bg-login .login-screen.create-account {
-  height: 510px;
+  height: 550px;
 }
 .bg-login .panel-login .panel-heading {
   padding: 0px;
@@ -13887,13 +13886,13 @@ pre .hljs {
   margin: 25px 0 0 0;
 }
 .bg-login .panel-login .panel-body .extra-links {
-  margin: 20px 0 0 0;
-  padding: 0;
-  list-style-type: none;
+    margin: 20px 0 0 0;
+    padding: 0;
+    list-style-type: none;
 }
 .bg-login .panel-login .panel-body .extra-links li {
-  margin: 0;
-  text-align: center;
+    margin: 0;
+    text-align: center;
 }
 .bg-login .panel-login .panel-body .extra-links li a {
   padding: 5px 0;
@@ -13901,7 +13900,7 @@ pre .hljs {
   color: rgba(255, 255, 255, 0.8);
 }
 .bg-login .panel-login .panel-body.active {
-  display: block;
+    display: block;
 }
 .user-profile > .panel {
   margin-top: 10px;

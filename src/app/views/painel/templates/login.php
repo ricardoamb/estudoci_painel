@@ -1,20 +1,25 @@
-<div class="card card-container">
-    <img class="profile-img-card" src="<?php echo base_url('assets/img');?>/logo-ricardoamb-art.png" alt="" />
-    <p id="profile-name" class="profile-name-card"></p>
-    <form class="form-signin" action="<?php base_url('users/login'); ?>" method="post" accept-charset="utf-8">
-        <span id="reauth-email" class="reauth-email"></span>
-        <?php echo form_error('email','<div class="login-error login-error-email">','<i class="fa fa-warning fa-lg"></i></div>');?>
-        <input type="text" id="inputEmail" name="email" class="form-control" placeholder="E-mail" autofocus>
-        <?php echo form_error('senha','<div class="login-error login-error-senha">','<i class="fa fa-warning fa-lg"></i></div>');?>
-        <input type="password" id="inputPassword" name="senha" class="form-control" placeholder="Senha" >
-        <div id="remember" class="checkbox">
-            <label>
-                <input type="checkbox" value="Me lembrar"> Me lembrar
-            </label>
-        </div>
-        <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Entrar</button>
-    </form><!-- /form -->
-    <a href="#" class="forgot-password">
-        Esqueci a minha senha
-    </a>
-</div>
+<div class="login-screen <?php if(form_error('email') || form_error('senha')) echo 'error'; ?>">
+    <div class="panel-login blur-content">
+        <div class="panel-heading"><!--panel-heading-->
+            <img src="<?php echo base_url('assets/img')?>/logo-ricardoamb-art-white.png" height="40" alt="Ricardo Amb" style="margin:25px 0">
+        </div><!--panel-heading-->
+
+            <?php include_once('forms/login.php'); ?>
+
+            <?php include_once('forms/login_forgot_password.php'); ?>
+
+            <?php include_once('forms/login_create_account.php'); ?>
+
+    </div><!--.blur-content-->
+
+</div><!--.login-screen-->
+
+<div class="bg-blur dark">
+    <div class="overlay"></div><!--.overlay-->
+</div><!--.bg-blur-->
+
+<svg version="1.1" xmlns='http://www.w3.org/2000/svg'>
+    <filter id='blur'>
+        <feGaussianBlur stdDeviation='7' />
+    </filter>
+</svg>
