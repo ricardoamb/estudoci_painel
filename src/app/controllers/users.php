@@ -38,7 +38,8 @@ class Users extends CI_Controller {
         }
         setTheme('title','Login');
         setTheme('content', loadModule('user','login'));
-        setTheme('bodyClass','login');
+        setTheme('initPlugins', loadJavascript(array('scripts/user-pages')), false);
+        setTheme('bodyClass','login bg-login printable');
         loadTemplate();
     }
 }

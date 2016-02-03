@@ -51,18 +51,23 @@ function initAdmin()
     $ci->load->library(array('system','session','form_validation'));
     $ci->load->helper(array('form','url','array','text'));
     $ci->load->model(array('users_model')); // Models
+
     setTheme('defaultTitle','My Dashboard');
     setTheme('defaultSubtitle','Almost Everything!');
     $year = date('Y');
     setTheme('defaultFooter',"");
     setTheme('template','painel');
     setTheme('templateFolder','templates');
+    // Header Globals
     setTheme('coreCSS', loadStyle(array('admin','elements')), false);
     setTheme('pluginsCSS', loadStyle(array('plugins')), false);
     setTheme('headerJS',loadJavascript(array('modernizr.min')), false);
     setTheme('headerIncludes',loadStyle(array('ionicons.min','font-awesome.min')), false);
-    setTheme('footerIncludes',loadJavascript('https://code.jquery.com/jquery-1.12.0.min.js','',true), false);
-    setTheme('footerIncludes',loadJavascript(array('bootstrap.min','main')), false);
+    // Footer Globals
+    setTheme('globalVendors',loadJavascript(array('global-vendors')),false);
+    setTheme('pluginsArea','',false);
+    setTheme('initPlugins','',false);
+    setTheme('footerIncludes',loadJavascript(array('pleasure','layout','bootstrap.min','main')), false);
 }
 
 // Carrega um template passando o array como parametro
