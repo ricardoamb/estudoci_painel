@@ -18,8 +18,29 @@ $(document).ready(function(){
         "hideMethod": "fadeOut"
     }
 
+    if($('#message').data('status') == true){
+        switch ($('#message').data('type'))
+        {
+            case 'default':
+                toastr.info($('#message').data('msg'), $('#message').data('msgTitle'));
+                break;
+            case 'error':
+                toastr.error($('#message').data('msg'), $('#message').data('msgTitle'));
+                break;
+            case 'warning':
+                toastr.warning($('#message').data('msg'), $('#message').data('msgTitle'));
+                break;
+            case 'success':
+                toastr.success($('#message').data('msg'), $('#message').data('msgTitle'));
+                break;
+            default:
+                toastr.info($('#message').data('msg'), $('#message').data('msgTitle'));
+                break;
+        }
+    }
+
     if($("#fail").data('fail') == 'login'){
-        toastr["error"]("Nome de usuário ou senha incorretos tente novamente.","ERRO DE LOGIN")
+        toastr.error("Nome de usuário ou senha incorretos tente novamente.","ERRO DE LOGIN")
     }
 
     $('.logoff-link').click(function(){

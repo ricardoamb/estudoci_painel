@@ -161,5 +161,39 @@ function isLogged($redirect=true)
     }
 }
 
+// define uma mensagem para ser exibida na proxima tela carregada
+function setMessage($id = 'msg', $msgTitle=null, $msg=null, $type = 'default')
+{
+    $ci =& get_instance();
+    $ci->load->library('session');
+    $ci->session->set_flashdata('status',true);
+    $ci->session->set_flashdata('msgTitle', $msgTitle);
+    $ci->session->set_flashdata('msg',$msg);
+    $ci->session->set_flashdata('type', $type);
+}
+
+
+ function getMessage($id, $print=true)
+ {
+     $ci =& get_instance();
+     if($ci->session->flashdata($id)){
+         if($print)
+         {
+             echo '<span id="message"
+                 data-status="'   . $ci->session->flashdata('status') .'"
+                 data-msgTitle="' . $ci->session->flashdata('msgTitle') . '"
+                 data-msg="'      . $ci->session->flashdata('msg').'"
+                 data-type="'     . $ci->session->flashdata('type') .'"></span>';
+             return true;
+         }else{
+             return array(
+                 'status'   => $ci->session->flashdata('status'),
+                 'msgTitle' => $ci->session->flashdata('msgTitle'),
+                 'msg'      => $ci->session->flashdata('msg'),
+                 'type'     => $ci->session->flashdata('type')
+             );
+         }
+     }else{ return false; }
+ }
 /* End of file functions_helper.php */
 /* Location ./src/app/helpers/functions_helper.php */

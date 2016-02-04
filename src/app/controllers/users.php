@@ -53,6 +53,7 @@ class Users extends CI_Controller {
             'logged'    => false
         ));
         $this->session->sess_destroy();
+        setMessage('logoff','Você saiu do sistema!',"Você realizou o logoff com sucesso. \n Esperamos você em breve!");
         redirect('users/login');
     }
 
