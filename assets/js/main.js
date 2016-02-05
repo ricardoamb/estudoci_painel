@@ -1,53 +1,41 @@
 $(document).ready(function(){
 
-    toastr.options = {
-        "closeButton": false,
-        "debug": false,
-        "newestOnTop": true,
-        "progressBar": false,
-        "positionClass": "toast-bottom-full-width",
-        "preventDuplicates": true,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "3000",
-        "extendedTimeOut": "1000",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    }
+    Lobibox.notify.DEFAULTS = $.extend({}, Lobibox.notify.DEFAULTS, {
+        soundPath: "../../assets/sounds/",   // The folder path where sounds are located
+        soundExt: ".ogg",
+        iconSource: "fontAwesome",
+        position: "top right",
+        width: $(window).width(),
+        delayIndicator: false,
+        delay: 3000,
+        showClass: 'bounceInLeft',
+        hideClass: 'bounceOutRight'
+    });
 
-    if($('#message').data('status') == true){
-        switch ($('#message').data('type'))
+    if($('#message').length)
+    {
+        if($('#message').data('status'))
         {
-            case 'default':
-                toastr.info($('#message').data('msg'), $('#message').data('msgTitle'));
-                break;
-            case 'error':
-                toastr.error($('#message').data('msg'), $('#message').data('msgTitle'));
-                break;
-            case 'warning':
-                toastr.warning($('#message').data('msg'), $('#message').data('msgTitle'));
-                break;
-            case 'success':
-                toastr.success($('#message').data('msg'), $('#message').data('msgTitle'));
-                break;
-            default:
-                toastr.info($('#message').data('msg'), $('#message').data('msgTitle'));
-                break;
+            switch ($('#message').data('type'))
+            {
+                case 'error':
+                    Lobibox.notify('error',{title: $('#message').data('msgTitle'),msg: $('#message').data('msg')});
+                    break;
+                case 'info':
+                    Lobibox.notify('info',{title: $('#message').data('msgTitle'),msg: $('#message').data('msg')});
+                    break;
+                case 'warning':
+                    Lobibox.notify('warning',{title: $('#message').data('msgTitle'),msg: $('#message').data('msg')});
+                    break;
+                case 'warning':
+                    Lobibox.notify('success',{title: $('#message').data('msgTitle'),msg: $('#message').data('msg')});
+                    break;
+                default:
+                    Lobibox.notify('info',{title: $('#message').data('msgTitle'),msg: $('#message').data('msg')});
+                    break;
+            }
         }
     }
-
-    if($("#fail").data('fail') == 'login'){
-        toastr.error("Nome de usuário ou senha incorretos tente novamente.","ERRO DE LOGIN")
-    }
-
-    $('.logoff-link').click(function(){
-        $('.hover-panel').fadeIn(function(){
-            window.location.href = $('#configs').data('url') + 'users/logoff';
-        });
-    });
 
     $('body').perfectScrollbar();
     $('.menu-layer').perfectScrollbar();
@@ -62,4 +50,5 @@ $(document).ready(function(){
     if ($(".login-error-senha").length){
         $('#inputPassword').css('border-color','#FF0000');
     }
+
 });

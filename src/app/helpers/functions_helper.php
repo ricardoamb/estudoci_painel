@@ -62,12 +62,12 @@ function initAdmin()
     setTheme('coreCSS', loadStyle(array('admin','elements','main','perfect-scrollbar')), false);
     setTheme('pluginsCSS', loadStyle(array('plugins')), false);
     setTheme('headerJS',loadJavascript(array('modernizr.min')), false);
-    setTheme('headerIncludes',loadStyle(array('ionicons.min','font-awesome.min')), false);
+    setTheme('headerIncludes',loadStyle(array('ionicons.min','font-awesome.min','Lobibox.min','animate')), false);
     // Footer Globals
     setTheme('globalVendors',loadJavascript(array('global-vendors')),false);
     setTheme('pluginsArea','',false);
     setTheme('initPlugins','',false);
-    setTheme('footerIncludes',loadJavascript(array('pleasure','layout','bootstrap.min','perfect-scrollbar.jquery','main')), false);
+    setTheme('footerIncludes',loadJavascript(array('pleasure','layout','bootstrap.min','perfect-scrollbar.jquery','lobibox.min','notifications.min','main')), false);
 }
 
 // Carrega um template passando o array como parametro
@@ -143,19 +143,15 @@ function loadJavascript($file=null,$folder='assets/js',$remote=false)
 }
 
 // verifica se o usuarios esta logado no sistema
-function isLogged($redirect=true)
+function isLogged()
 {
     $ci =& get_instance();
     $ci->load->library('session');
+    $ci->load->driver('session');
     $userStatus = $ci->session->userdata('logged');
     if(!isset($userStatus) || $userStatus != true)
     {
-        if($redirect)
-        {
-            redirect('users/login');
-        }else{
-            return false;
-        }
+        return false;
     }else{
         return true;
     }
@@ -166,7 +162,9 @@ function setMessage($id = 'msg', $msgTitle=null, $msg=null, $type = 'default')
 {
     $ci =& get_instance();
     $ci->load->library('session');
+    $ci->load->driver('session');
     $ci->session->set_flashdata('status',true);
+    $ci->session->set_flashdata('id', $id);
     $ci->session->set_flashdata('msgTitle', $msgTitle);
     $ci->session->set_flashdata('msg',$msg);
     $ci->session->set_flashdata('type', $type);

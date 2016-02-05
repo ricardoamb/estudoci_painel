@@ -39,7 +39,7 @@ class Users extends CI_Controller {
         setTheme('title','Login');
         setTheme('content', loadModule('user','login'));
         setTheme('initPlugins', loadJavascript(array('scripts/user-pages')), false);
-        setTheme('bodyClass','login bg-blur bg-login printable');
+        setTheme('bodyClass','login bg-login printable');
         loadTemplate();
     }
 
@@ -54,7 +54,7 @@ class Users extends CI_Controller {
         ));
         $this->session->sess_destroy();
         setMessage('logoff','Você saiu do sistema!',"Você realizou o logoff com sucesso. \n Esperamos você em breve!");
-        redirect('users/login');
+        redirect('users/login/?msg=logoff');
     }
 
 }

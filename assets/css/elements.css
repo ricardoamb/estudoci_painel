@@ -13833,10 +13833,9 @@ pre .hljs {
     left: 50%;
     width: 400px;
     height: 425px;
-    margin-left: -85px;
-    border-radius: 5px;
+    border-radius: 0;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.6);
     -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
